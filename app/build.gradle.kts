@@ -41,19 +41,21 @@ android {
 
 dependencies {
 
-    // Core Compose
-    implementation("androidx.compose.ui:ui:1.6.0")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.6.0") 
-    debugImplementation("androidx.compose.ui:ui-tooling:1.6.0") // Material3
-    implementation("androidx.compose.material3:material3:1.2.0") // Activity Compose
-    implementation("androidx.activity:activity-compose:1.8.2") // Wear Compose (si usas Wear OS)
-    implementation("androidx.wear.compose:compose-material:1.3.0")
-    implementation("androidx.wear.compose:compose-foundation:1.3.0")
-    implementation(libs.play.services.wearable)
+    // BOM
     implementation(platform(libs.compose.bom))
+
+    // Compose UI
     implementation(libs.ui)
-    implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
+
+    // Material 3
+    implementation(libs.material3)
+    implementation(libs.tiles)
+
+    // Tooling
+    debugImplementation(libs.ui.tooling)
+    implementation(libs.play.services.wearable)
+    implementation(libs.ui.graphics)
     implementation(libs.compose.material)
     implementation(libs.compose.foundation)
     implementation(libs.wear.tooling.preview)
